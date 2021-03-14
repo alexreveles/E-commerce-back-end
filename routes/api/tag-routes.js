@@ -10,13 +10,13 @@ router.get('/', (req, res) => {
       // be sure to include its associated Product data
       model: Product,
     }
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
   
 });
 
@@ -30,13 +30,13 @@ router.get('/:id', (req, res) => {
     include: {
       model: Product
     }
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
   
 });
 
@@ -45,10 +45,10 @@ router.post('/', (req, res) => {
   Tag.create({
     tag_name: req.body.tag_name
   })
-  .then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
+  .then((dbPost) => 
+    res.json(dbPost))
+  
+  .catch((err )=> {
     console.log(err);
     res.status(400).json(err);
   });
@@ -62,13 +62,13 @@ router.put('/:id', (req, res) => {
     where: {
       id: req.params.id
     }
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
 });
 
 router.delete('/:id', (req, res) => {
@@ -77,13 +77,13 @@ router.delete('/:id', (req, res) => {
     where: {
       id: req.params.id
     }
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
 });
 
 module.exports = router;
