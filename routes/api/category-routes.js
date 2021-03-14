@@ -9,13 +9,13 @@ router.get('/', (req, res) => {
   Category.findAll({
   // be sure to include its associated Products
     include: [Product]
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
 
   
 });
@@ -24,14 +24,17 @@ router.get('/:id', (req, res) => {
   // find one category by its `id` value
   Category.findOne({
   // be sure to include its associated Products
+  where: {
+    id: req.params.id
+  },
   include: [Product]
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
   
 });
 
@@ -40,30 +43,30 @@ router.post('/', (req, res) => {
   // expects category_name
   Category.create({
     category_name: req.body.category_name
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
 });
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
   // pass in req.body instead to only update what's passed through
   Category.update(req.body, {
-    individualHooks: true,
+    // individualHooks: true,
     where: {
-      category_name: req.params.id
+      id: req.params.id
     }
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
 
 });
 
@@ -73,13 +76,13 @@ router.delete('/:id', (req, res) => {
     where: {
       id: req.params.id
     }
-  }).then(dbPost => {
-    res.json(dbPost);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(400).json(err);
-  });
+  }).then((dbPost) => 
+  res.json(dbPost))
+
+.catch((err )=> {
+  console.log(err);
+  res.status(400).json(err);
+});
 });
 
 module.exports = router;
