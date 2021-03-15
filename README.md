@@ -26,7 +26,8 @@
   ## Questions
   If you have any questions regarding about the application, please contact me VIA email alexreveles@yahoo.com
   Thank You!
-#### 
+#### https://ecommerce-alex.herokuapp.com/ 
+#### https://dashboard.heroku.com/apps/ecommerce-alex
 #### https://youtu.be/98m3ULhn1gA
 #### https://github.com/alexreveles
 
